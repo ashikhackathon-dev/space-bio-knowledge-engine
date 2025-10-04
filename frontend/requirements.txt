@@ -1,1 +1,8 @@
+dash
+dash-cytoscape
+dash-bootstrap-components
+plotly
+pandas
+requests
+python-dotenv
 
