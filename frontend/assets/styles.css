@@ -1,1 +1,50 @@
+/* frontend/assets/styles.css */
+:root {
+  --bg: #0B0E14;
+  --text: #E6EDF3;
+  --muted: #9AA4AD;
+  --nasa-blue: #0B3D91;
+  --nasa-red: #FC3D21;
+  --card: #151922;
+}
+
+body {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+.navbar, .card {
+  background-color: var(--card) !important;
+}
+
+.brand-text {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.result-card {
+  border-left: 3px solid transparent;
+}
+.result-card:hover {
+  border-left: 3px solid var(--nasa-blue);
+  transition: border-left 0.2s ease-in-out;
+}
+
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.summary-block {
+  background: #0f1216;
+  color: #d6dde5;
+  border-left: 3px solid var(--nasa-red);
+  padding: 12px;
+  white-space: pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* Cytoscape container inherits background from var(--bg) via inline style */
 
