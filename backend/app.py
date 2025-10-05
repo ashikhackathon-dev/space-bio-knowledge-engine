@@ -540,6 +540,9 @@ def create_app() -> FastAPI:
                 for p in items
             ]
         return PublicationsResponse(total=total, items=payload)
+    @app.get("/")
+    async def root():
+        return {"message": "Space Biology Knowledge Engine API running."}
 
     return app
 
