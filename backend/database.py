@@ -72,7 +72,7 @@ class Chunk(Base):
     text: Mapped[str] = mapped_column(Text)
     char_start: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
     char_end: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
-    metadata: Mapped[Optional[Dict[str, Any]]] = mapped_column(JSON, nullable=True)
+    metadata_json: Mapped[Optional[Dict[str, Any]]] = mapped_column(JSON, nullable=True)
 
     publication: Mapped[Optional[Publication]] = relationship(
         "Publication", back_populates="chunks", primaryjoin="foreign(Chunk.doc_id)==Publication.doc_id"
