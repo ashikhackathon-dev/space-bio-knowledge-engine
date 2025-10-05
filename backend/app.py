@@ -14,11 +14,11 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from pydantic_settings import BaseSettings
 
-from . import utils
-from .ai import entity_extractor as ie
-from .ai import search as search_ai
-from .ai import summarizer
-from .database import (
+import utils
+from ai import entity_extractor as ie
+from ai import search as search_ai
+from ai import summarizer
+from database import (
     Chunk,
     Entity,
     Publication,
@@ -31,6 +31,7 @@ from .database import (
     populate_fts,
     reset_fts,
 )
+
 
 
 class Settings(BaseSettings):
