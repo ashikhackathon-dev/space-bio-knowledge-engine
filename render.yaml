@@ -16,13 +16,8 @@ services:
       - key: EMBEDDING_MODEL
         value: sentence-transformers/all-MiniLM-L6-v2
       - key: VECTOR_DIR
-        value: /opt/render/project/src/vectors
+        value: ./vectors
       - key: FRONTEND_ORIGIN
         value: "*"
       - key: PYTHON_VERSION
         value: 3.11.0
-    disk:
-      name: spacebio-storage
-      mountPath: /opt/render/project/src
-      sizeGB: 1
-
