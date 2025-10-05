@@ -80,7 +80,7 @@ class SearchRequest(BaseModel):
     query: str
     top_k: int = 10
     filters: Optional[SearchFilters] = None
-    re_rank: bool = True
+    re_rank: bool = False
     re_rank_model: Optional[str] = Field(default="cross-encoder/ms-marco-MiniLM-L-6-v2")
 
 
