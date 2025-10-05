@@ -273,7 +273,7 @@ def create_app() -> FastAPI:
                     chunk_id = utils.compute_chunk_id(doc_id, idx)
                     existing = s.query(Chunk).filter_by(chunk_id=chunk_id).first()
                     if existing is None:
-                        row = Chunk(chunk_id=chunk_id, doc_id=doc_id, text=chunk, metadata={})
+                        row = Chunk(chunk_id=chunk_id, doc_id=doc_id, text=chunk, metadata_json={})
                         s.add(row)
                         added_count += 1
                     ids.append(chunk_id)
