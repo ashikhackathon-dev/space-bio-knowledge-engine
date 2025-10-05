@@ -545,6 +545,10 @@ def create_app() -> FastAPI:
         return {"message": "Space Biology Knowledge Engine API running."}
 
     return app
+if __name__=="__main__":
+    import uvicorn
+    uvicorn.run("app:app", host="0.0.0.0", port=int(os.environ.get("PORT", 8000)), reload=False)
+
 
 
 app = create_app()
