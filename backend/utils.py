@@ -21,7 +21,7 @@ def normalize_whitespace(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def chunk_text(text: str, max_tokens: int = 800, overlap_tokens: int = 120) -> List[str]:
+def chunk_text(text: str, max_tokens: int = 300, overlap_tokens: int = 60) -> List[str]:
     words = text.split()
     if not words:
         return []
