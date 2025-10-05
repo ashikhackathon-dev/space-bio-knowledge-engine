@@ -1,1 +1,28 @@
+services:
+  # Backend API Service
+  - type: web
+    name: spacebio-backend
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r backend/requirements.txt
+      python -m spacy download en_core_web_sm
+    startCommand: cd backend && python -m uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DB_URL
+        value: sqlite:///spacebio.db
+      - key: EMBEDDING_MODEL
+        value: sentence-transformers/all-MiniLM-L6-v2
+      - key: VECTOR_DIR
+        value: /opt/render/project/src/vectors
+      - key: FRONTEND_ORIGIN
+        value: "*"
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    disk:
+      name: spacebio-storage
+      mountPath: /opt/render/project/src
+      sizeGB: 1
 
